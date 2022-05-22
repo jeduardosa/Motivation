@@ -4,77 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/linear_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/purple"
+        android:gravity="center_vertical">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_baseline_all_inclusive_24"
-            android:layout_weight="1"/>
+            android:id="@+id/image_all"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/phrases_all"
+            android:src="@drawable/ic_all_infinite" />
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_baseline_emoji_emotions_24"
-            android:layout_weight="1"/>
+            android:id="@+id/image_happy"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/phrases_motivation"
+            android:src="@drawable/ic_happy" />
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_baseline_wb_sunny_24"
-            android:layout_weight="1"/>
-
-
-
-
+            android:id="@+id/image_sunny"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/phrases_morning"
+            android:src="@drawable/ic_sunny" />
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/text_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_menu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/cabin"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/user"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
+    <TextView
+        android:id="@+id/text_phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/cabin"
+        android:text="@string/phrase"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/linear_menu"
-                android:text="@string/ola_kotlin"
-                android:layout_marginTop="32dp"
-                android:textAlignment="center"
+    <View
+        android:layout_width="128dp"
+        android:layout_height="3dp"
+        android:layout_below="@id/text_phrase"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:background="@color/dark_purple"
+        android:elevation="5dp" />
 
-                />
-
-            <TextView
-                android:id="@+id/text_phrases"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/frases"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:layout_centerInParent="true"/>
-
-            <View
-                android:layout_width="128dp"
-                android:layout_height="5dp"
-                android:background="@color/black"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/text_phrases"/>
-
-            <Button
-                android:id="@+id/btnFrase"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Nova Frase"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="32dp"
-                android:textSize="18sp"
-                />
+    <Button
+        android:id="@+id/button_new_phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/dark_purple"
+        android:fontFamily="@font/cabin"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/new_phrase"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

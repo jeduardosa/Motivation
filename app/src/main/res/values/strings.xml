@@ -1,5 +1,23 @@
 <resources>
     <string name="app_name">Motivation</string>
-    <string name="frases">frase</string>
-    <string name="ola_kotlin">Ola, Kotlin!</string>
+    <string name="new_phrase">Nova frase</string>
+    <string name="your_name">Qual seu nome?</string>
+    <string name="user">Usuário</string>
+    <string name="phrase">Frase</string>
+    <string name="save">Salvar</string>
+    <string name="lets_begin">Vamos começar?</string>
+    <string name="phrases_all">Todas as frases</string>
+    <string name="phrases_motivation">Frases de motivação</string>
+    <string name="phrases_morning">Frases para manhã</string>
+
+    <string name="validation_mandatory_name">Informe seu nome.</string>
+    <string name="title_activity_user">UserActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
