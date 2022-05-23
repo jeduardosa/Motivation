@@ -15,15 +15,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonNewPhrase.setOnClickListener(this)
-
         supportActionBar?.hide()
 
+        handUserName()
+
+        binding.buttonNewPhrase.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        if (v.id == R.id.button_new_phrase){
-
+        if (v!!.id == R.id.button_new_phrase){
+            var s = ""
         }
+    }
+
+    private fun handUserName() {
+        val name = SecurityPreferences(this).getString("USER_NAME")
+        binding.textUserName.text = "Olá, $name!"
     }
 }

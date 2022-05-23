@@ -1,17 +1,18 @@
 package learn.project.motivation
 
-import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import android.os.Bundle
+import android.view.View
+import android.widget.ShareActionProvider
+import android.widget.Toast
+import learn.project.motivation.databinding.ActivityMainBinding
 import learn.project.motivation.databinding.ActivityUserBinding
 
-class UserActivity : AppCompatActivity() {
+class UserActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityUserBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,21 +21,27 @@ class UserActivity : AppCompatActivity() {
         binding = ActivityUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
+        binding.buttonSave.setOnClickListener(this)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_user)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        supportActionBar?.hide()
+    }
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+    override fun onClick(v: View?) {
+        if (v!!.id == R.id.button_save) {
+            handSave()
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_user)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+    private fun handSave() {
+        val name = binding.editName.text.toString()
+        if (name != ""){
+
+            SecurityPreferences(this).storeString("USER_NAME", name)
+
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        } else {
+            Toast.makeText(this, R.string.validation_mandatory_name, Toast.LENGTH_SHORT).show()
+        }
     }
 }

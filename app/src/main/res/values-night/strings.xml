@@ -11,4 +11,5 @@
     <string name="phrases_morning">Frases para manhã</string>
 
     <string name="validation_mandatory_name">Informe seu nome.</string>
+    <string name="title_activity_user">UserActivity</string>
 </resources>
