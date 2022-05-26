@@ -1,4 +1,4 @@
-package learn.project.motivation
+package learn.project.motivation.infra
 
 import android.content.Context
 import android.content.SharedPreferences
