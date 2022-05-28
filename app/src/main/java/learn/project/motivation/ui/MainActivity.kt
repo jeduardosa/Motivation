@@ -1,7 +1,6 @@
 package learn.project.motivation.ui
 
-import android.graphics.Color
-import android.graphics.PorterDuff
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +8,9 @@ import learn.project.motivation.infra.MotivationConstants
 import learn.project.motivation.R
 import learn.project.motivation.infra.SecurityPreferences
 import learn.project.motivation.databinding.ActivityMainBinding
+import androidx.core.content.ContextCompat
+
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -42,23 +44,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun handleFilter(id: Int) {
-        binding.imageAll.setColorFilter(R.color.dark_purple, PorterDuff.Mode.SRC_IN)
-        binding.imageHappy.setColorFilter(R.color.dark_purple, PorterDuff.Mode.SRC_IN)
-        binding.imageSunny.setColorFilter(R.color.dark_purple, PorterDuff.Mode.SRC_IN)
+        binding.imageAll.setColorFilter(ContextCompat.getColor(this, R.color.dark_purple))
+        binding.imageHappy.setColorFilter(ContextCompat.getColor(this, R.color.dark_purple))
+        binding.imageSunny.setColorFilter(ContextCompat.getColor(this, R.color.dark_purple))
 
 
 
         when (id) {
             R.id.image_all -> {
-                binding.imageAll.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN)
+                binding.imageAll.setColorFilter(ContextCompat.getColor(this, R.color.white))
                 categoryId = MotivationConstants.FILTER.ALL
             }
             R.id.image_happy -> {
-                binding.imageHappy.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN)
+                binding.imageHappy.setColorFilter(ContextCompat.getColor(this, R.color.white))
                 categoryId = MotivationConstants.FILTER.HAPPY
             }
             R.id.image_sunny -> {
-                binding.imageSunny.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN)
+                binding.imageSunny.setColorFilter(ContextCompat.getColor(this, R.color.white))
                 categoryId = MotivationConstants.FILTER.SUNNY
             }
         }
